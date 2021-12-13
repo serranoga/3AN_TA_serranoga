@@ -1,0 +1,164 @@
+\hypertarget{main_8cc}{}\doxysection{src/main.cc File Reference}
+\label{main_8cc}\index{src/main.cc@{src/main.cc}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$AL/al.\+h$>$}\newline
+{\ttfamily \#include $<$AL/alc.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_my_variables}{My\+Variables}}
+\item 
+struct \mbox{\hyperlink{struct_r_i_f_f___header}{RIFF\+\_\+\+Header}}
+\item 
+struct \mbox{\hyperlink{struct_w_a_v_e___format}{WAVE\+\_\+\+Format}}
+\item 
+struct \mbox{\hyperlink{struct_w_a_v_e___data}{WAVE\+\_\+\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{main_8cc_afd3f3625f819b33d6cac8afe48093634}{Load\+Wav\+File}} (const std\+::string filename, ALuint $\ast$buffer, ALsizei $\ast$size, ALsizei $\ast$frequency, ALenum $\ast$format)
+\item 
+void \mbox{\hyperlink{main_8cc_a2501930f92b01513f6495892123f23f9}{Reset}} (\mbox{\hyperlink{struct_my_variables}{My\+Variables}} \&my\+\_\+vars, int activate)
+\item 
+void \mbox{\hyperlink{main_8cc_a16e60672e04501a39f7d96af6b6bc82b}{Init}} (ALuint $\ast$buf, ALuint $\ast$src, \mbox{\hyperlink{struct_my_variables}{My\+Variables}} \&my\+\_\+vars)
+\item 
+void \mbox{\hyperlink{main_8cc_a6aee1db398d6fc0d9f7a5b7b45685cc7}{Crossfading}} (ALuint $\ast$src, \mbox{\hyperlink{struct_my_variables}{My\+Variables}} \&my\+\_\+vars)
+\item 
+void \mbox{\hyperlink{main_8cc_ad379e5564d2f558e1e8998742648e2b7}{Layering}} (ALuint $\ast$src, \mbox{\hyperlink{struct_my_variables}{My\+Variables}} \&my\+\_\+vars)
+\item 
+void \mbox{\hyperlink{main_8cc_a1c55dd2c4a71b4040a80b87ab88d32ed}{Branching}} (ALuint $\ast$src, \mbox{\hyperlink{struct_my_variables}{My\+Variables}} \&my\+\_\+vars)
+\item 
+double \mbox{\hyperlink{main_8cc_af555c7517e1422f1d447ce98e9f8ea28}{Delta\+Time}} (clock\+\_\+t clock)
+\item 
+int \mbox{\hyperlink{main_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{main_8cc_ae2c0a23c4a8f544e389585391ef94d71}{k\+Total\+Sounds}} = 5
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cc_a1c55dd2c4a71b4040a80b87ab88d32ed}\label{main_8cc_a1c55dd2c4a71b4040a80b87ab88d32ed}} 
+\index{main.cc@{main.cc}!Branching@{Branching}}
+\index{Branching@{Branching}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{Branching()}{Branching()}}
+{\footnotesize\ttfamily void Branching (\begin{DoxyParamCaption}\item[{ALuint $\ast$}]{src,  }\item[{\mbox{\hyperlink{struct_my_variables}{My\+Variables}} \&}]{my\+\_\+vars }\end{DoxyParamCaption})}
+
+Branching function. Execute the branching technique, changing sound to play with a constant sound. 
+\begin{DoxyParams}{Parameters}
+{\em src} & The source to play and change attributes. \\
+\hline
+{\em my\+\_\+vars} & To manage and save the new data of my variables. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8cc_a6aee1db398d6fc0d9f7a5b7b45685cc7}\label{main_8cc_a6aee1db398d6fc0d9f7a5b7b45685cc7}} 
+\index{main.cc@{main.cc}!Crossfading@{Crossfading}}
+\index{Crossfading@{Crossfading}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{Crossfading()}{Crossfading()}}
+{\footnotesize\ttfamily void Crossfading (\begin{DoxyParamCaption}\item[{ALuint $\ast$}]{src,  }\item[{\mbox{\hyperlink{struct_my_variables}{My\+Variables}} \&}]{my\+\_\+vars }\end{DoxyParamCaption})}
+
+Crossfading function. Execute the crossfading technique, making a short transition between sounds. 
+\begin{DoxyParams}{Parameters}
+{\em src} & The source to play and change attributes. \\
+\hline
+{\em my\+\_\+vars} & To manage and save the new data of my variables. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8cc_af555c7517e1422f1d447ce98e9f8ea28}\label{main_8cc_af555c7517e1422f1d447ce98e9f8ea28}} 
+\index{main.cc@{main.cc}!DeltaTime@{DeltaTime}}
+\index{DeltaTime@{DeltaTime}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{DeltaTime()}{DeltaTime()}}
+{\footnotesize\ttfamily double Delta\+Time (\begin{DoxyParamCaption}\item[{clock\+\_\+t}]{clock }\end{DoxyParamCaption})}
+
+Delta\+Time function. Execute the branching technique, changing sound to play with a constant sound. \begin{DoxyReturn}{Returns}
+The time elapsed between frames. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em clock} & The last frame time saved. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8cc_a16e60672e04501a39f7d96af6b6bc82b}\label{main_8cc_a16e60672e04501a39f7d96af6b6bc82b}} 
+\index{main.cc@{main.cc}!Init@{Init}}
+\index{Init@{Init}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Init (\begin{DoxyParamCaption}\item[{ALuint $\ast$}]{buf,  }\item[{ALuint $\ast$}]{src,  }\item[{\mbox{\hyperlink{struct_my_variables}{My\+Variables}} \&}]{my\+\_\+vars }\end{DoxyParamCaption})}
+
+Init function. Initialize and load the sounds to be played correctly. 
+\begin{DoxyParams}{Parameters}
+{\em buf} & The buffer to save the sound data \\
+\hline
+{\em src} & The source to play and link the buffer \\
+\hline
+{\em my\+\_\+vars} & To manage and save the new data of my variables. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8cc_ad379e5564d2f558e1e8998742648e2b7}\label{main_8cc_ad379e5564d2f558e1e8998742648e2b7}} 
+\index{main.cc@{main.cc}!Layering@{Layering}}
+\index{Layering@{Layering}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{Layering()}{Layering()}}
+{\footnotesize\ttfamily void Layering (\begin{DoxyParamCaption}\item[{ALuint $\ast$}]{src,  }\item[{\mbox{\hyperlink{struct_my_variables}{My\+Variables}} \&}]{my\+\_\+vars }\end{DoxyParamCaption})}
+
+Layering function. Execute the layering technique, adding and removing layers of sounds to play. 
+\begin{DoxyParams}{Parameters}
+{\em src} & The source to play and change attributes. \\
+\hline
+{\em my\+\_\+vars} & To manage and save the new data of my variables. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8cc_afd3f3625f819b33d6cac8afe48093634}\label{main_8cc_afd3f3625f819b33d6cac8afe48093634}} 
+\index{main.cc@{main.cc}!LoadWavFile@{LoadWavFile}}
+\index{LoadWavFile@{LoadWavFile}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{LoadWavFile()}{LoadWavFile()}}
+{\footnotesize\ttfamily bool Load\+Wav\+File (\begin{DoxyParamCaption}\item[{const std\+::string}]{filename,  }\item[{ALuint $\ast$}]{buffer,  }\item[{ALsizei $\ast$}]{size,  }\item[{ALsizei $\ast$}]{frequency,  }\item[{ALenum $\ast$}]{format }\end{DoxyParamCaption})}
+
+Load wave file function. No need for ALUT or ALURE with this \begin{DoxyReturn}{Returns}
+Wether the file was succesfully loaded 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path of the WAV file \\
+\hline
+{\em buffer} & Open\+AL Buffer to load the WAV file to \\
+\hline
+{\em size} & Uncompressed sample size \\
+\hline
+{\em frequency} & Sample frequency (e.\+g\+: 11025, 22050, 44100...) in hertz \\
+\hline
+{\em format} & Open\+AL sample format \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.cc@{main.cc}!main@{main}}
+\index{main@{main}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cc_a2501930f92b01513f6495892123f23f9}\label{main_8cc_a2501930f92b01513f6495892123f23f9}} 
+\index{main.cc@{main.cc}!Reset@{Reset}}
+\index{Reset@{Reset}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void Reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_my_variables}{My\+Variables}} \&}]{my\+\_\+vars,  }\item[{int}]{activate }\end{DoxyParamCaption})}
+
+Reset function. Reset the vars to change technique. 
+\begin{DoxyParams}{Parameters}
+{\em my\+\_\+vars} & To manage and save the new data of my variables. \\
+\hline
+{\em activate} & To set all volume sound to 0 but the given number \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cc_ae2c0a23c4a8f544e389585391ef94d71}\label{main_8cc_ae2c0a23c4a8f544e389585391ef94d71}} 
+\index{main.cc@{main.cc}!kTotalSounds@{kTotalSounds}}
+\index{kTotalSounds@{kTotalSounds}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{kTotalSounds}{kTotalSounds}}
+{\footnotesize\ttfamily const int k\+Total\+Sounds = 5}
+
